@@ -9,6 +9,7 @@ padding : 10px ;
 /************************Body**********************/
 
 
+
 body {
 	font-family: Arial, sans-serif;
 	width: 1200px ;
@@ -24,7 +25,7 @@ body {
 /**************************Core **********************/
 
 
-#searchArtist {
+#searchBar{
 //background :  #663E10 ; 
 text-align : left ; 
 margin : 2px ; 
@@ -60,6 +61,14 @@ margin : 2px ;
 		
 
 }
+
+
+.textInput[type="search"][disabled] {
+   
+       border: 2px solid red ;
+
+}
+
 
 
 

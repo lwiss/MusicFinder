@@ -12,41 +12,46 @@
 	</head> 
 	
 	
+	     
 		<body>
 		   <?php include_once('controller/header.php')   ?>
 		
 		   
-	             <form id="searchArtist"  method="post" action="artistSearch.php">
-	             
-	             	<div class="search"> 
-	             <label class="label"  for="artist" >Artist </label> 
-	            <input class="textInput" type="text" name="artist" id="artist" placeholder="Search for an artist" />
+	             <form id="searchBar"  method="post" onsubmit=" return checkFields()"  action="controller/artistSearch.php">
+	                
+	             	<div class="search" > 
+	             <label class="label"   for="artist" >Artist </label> 
+	            <input class="textInput" id="artistSearchInput" onkeyup="javascript: inputBlurred(this)" type="search" name="artist" id="artist" placeholder="Search for an artist" />
 	            
 					</div>
 				
 				
-				<div class="search"> 
+				<div class="search" "> 
 	             <label class="label"  for="record" >Record </label> 
-	            <input class="textInput" type="text" name="record" id="record" placeholder="Search for a record" />
+	            <input class="textInput" id="recordSearchInput" onkeyup="javascript: inputBlurred(this)" type="search" name="record" id="record" placeholder="Search for a record" />
 	            
 					</div>
 					
 					
 					
-				<div class="search"> 
-	             <label class="label"  for="album" >Album </label> 
-	            <input class="textInput" type="text" name="album" id="album" placeholder="Search for a album" />
+				<div class="search" > 
+	             <label class="label" for="album" >Album </label> 
+	            <input class="textInput" id= "albumSearchInput"  type="search"  onkeyup="javascript: inputBlurred(this)" name="album" id="album" placeholder="Search for a album" />
 	            
 					</div>
 					
 					
 					
 					
-				<div class="search"> 
+				<div class="search" > 
 	             <label class="label"  for="genre" >Genre </label> 
-	            <input class="textInput" type="text" name="genre" id="genre" placeholder="Search for a genre" />
+	            <input class="textInput" id= "genreSearchInput" type="search" onkeyup="javascript: inputBlurred(this)" name="genre" id="genre" placeholder="Search for a genre" />
 	            
 					</div>
+					
+					<script src="../JavaScript/InputChange.js">
+
+	     			</script>
 				
 				<input class= "searchButton" type="submit" value="Search" />
 				</form>	   	
