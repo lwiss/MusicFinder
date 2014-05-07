@@ -31,6 +31,15 @@ class ArtistManager
 		return $artists;
 	}
 	
+	public function getArtistByRecordID ($recordID) {
+		$requete = $this->db->prepare("select distinct * from artist where aid IN (select A.aid from track T , sings S where T.recid = :recordID and T.id=S.trackid)");
+		$requete->bindValue(':recordID', (int) $recordID, PDO::PARAM_INT);
+		$requete->execute();
+		while ($donnees= $requete->fetch(PDO::FETCH_ASSOC)) 
+			$artists []= new Artist($donnees);
+		return $artists;
+	}
+	
 	
 }
 
