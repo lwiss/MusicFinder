@@ -6,7 +6,7 @@
  * @author lwiss
  * @package Users
  */
-class Artist {
+class Area {
 	/**
 	 * @AttributeType int
 	 */
@@ -19,14 +19,7 @@ class Artist {
 	 * @AttributeType string
 	 */
 	private $type;
-	/**
-	 * @AttributeType string
-	 */
-	private $gender;
-	/**
-	 * @AttributeType int
-	 */
-	private $areaID;
+
 	
 
 	
@@ -58,14 +51,7 @@ class Artist {
 	public function getID() {
 		return $this->id;
 	}
-	/**
-	 * @access public
-	 * @return areaID
-	 * @ReturnType int
-	 */
-	public function getAreaID() {
-		return $this->areaID;
-	}
+	
 	/**
 	 * @access public
 	 * @return name
@@ -82,39 +68,8 @@ class Artist {
 	public function getType() {
 		return $this->type;
 	}
-	/**
-	 * @access public
-	 * @return gender
-	 * @ReturnType string
-	 */
-	public function getGender() {
-		return $this->gender;
-	}
 	
-	
-	// ========= supplementary fonctions =========//
-	/**
-	 * @access public
-	 * @return area
-	 * @ReturnType Area (object)
-	 */
-	public function artistArea() {
-		$db = DBFactory::getMysqlConnexionWithPDO('');
-		$manager = new AreaManager($db);
-		$area= $manager->getAreaByID($this->areaID);
-		return $area;
-	}
-	/**
-	 * @access public
-	 * @return recordingList
-	 * @ReturnType Recording[]
-	 */
-	public function getRecordings() {
-		$db = DBFactory::getMysqlConnexionWithPDO('');
-		$manager = new RecordingManager($db);
-		$recordings [] = $manager->getRecordingByArtist($this->$id);
-		return $recordings;
-	}
+
 	
 	
 }
